@@ -18,16 +18,18 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let newItem = Item()
-        newItem.title = "Find Mike"
-        let newItem2 = Item()
-        newItem2.title = "Buy Eggos"
-        let newItem3 = Item()
-        newItem3.title = "Destroy Demogorgon"
+//        let newItem = Item()
+//        newItem.title = "Find Mike"
+//        let newItem2 = Item()
+//        newItem2.title = "Buy Eggos"
+//        let newItem3 = Item()
+//        newItem3.title = "Destroy Demogorgon"
+//        
+//        itemArray.append(newItem)
+//        itemArray.append(newItem2)
+//        itemArray.append(newItem3)
         
-        itemArray.append(newItem)
-        itemArray.append(newItem2)
-        itemArray.append(newItem3)
+        loadItems()
     }
 
     //MARK: Tableview Datasource Methods
@@ -100,6 +102,18 @@ class TodoListViewController: UITableViewController {
         }
         
         self.tableView.reloadData()
+    }
+    
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("Decoding error!")
+            }
+            
+        }
     }
 }
 
