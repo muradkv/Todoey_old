@@ -18,17 +18,6 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-//        let newItem = Item()
-//        newItem.title = "Find Mike"
-//        let newItem2 = Item()
-//        newItem2.title = "Buy Eggos"
-//        let newItem3 = Item()
-//        newItem3.title = "Destroy Demogorgon"
-//        
-//        itemArray.append(newItem)
-//        itemArray.append(newItem2)
-//        itemArray.append(newItem3)
-        
         loadItems()
     }
 
