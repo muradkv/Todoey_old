@@ -124,5 +124,11 @@ extension TodoListViewController: UISearchBarDelegate {
         
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+        }
+    }
+    
 }
 
