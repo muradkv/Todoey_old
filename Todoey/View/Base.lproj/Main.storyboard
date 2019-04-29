@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Todoey-->
+        <!--Items-->
         <scene sceneID="uOi-2b-jPQ">
             <objects>
                 <tableViewController id="dOz-BG-vdG" customClass="TodoListViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="dOz-BG-vdG" id="ap1-h6-0tj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todoey" id="X0P-85-hKi">
+                    <navigationItem key="navigationItem" title="Items" id="X0P-85-hKi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="udh-NE-qau">
                             <connections>
                                 <action selector="addButtonPressed:" destination="dOz-BG-vdG" id="ejH-cQ-YAv"/>
@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="922" y="133"/>
         </scene>
-        <!--Category View Controller-->
+        <!--Todoey-->
         <scene sceneID="eeS-T9-poR">
             <objects>
                 <tableViewController id="Ww1-WS-Np5" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,7 +97,14 @@
                             <outlet property="delegate" destination="Ww1-WS-Np5" id="4dA-1o-ajs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qan-se-l0p"/>
+                    <navigationItem key="navigationItem" title="Todoey" id="qan-se-l0p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ppx-XD-gkY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Ww1-WS-Np5" id="9x8-rS-rX2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="dOz-BG-vdG" kind="show" identifier="goToItems" id="9ud-EQ-D4H"/>
                     </connections>
